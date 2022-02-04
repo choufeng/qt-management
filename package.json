@@ -1,9 +1,14 @@
 {
   "name": "qt-management",
   "version": "0.0.1",
+  "author": {
+    "name": "Jon.Xia",
+    "email": "xiajia@vip.qq.com"
+  },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "vite --mode developement --config ./config/index.js",
+    "dev:e": "node ./server/app.js",
+    "build": "vite build --mode production --config ./config/index.js",
     "preview": "vite preview"
   },
   "dependencies": {
