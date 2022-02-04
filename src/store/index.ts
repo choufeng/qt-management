@@ -1,21 +1,20 @@
-import { InjectionKey } from "vue";
-import { createStore, Store } from "vuex";
-
-export interface State {
-  count: number;
-}
-
-export const key: InjectionKey<Store<State>> = Symbol();
+import { InjectionKey } from 'vue'
+import { createStore, Store, useStore } from 'vuex'
+import { state, State } from './state'
+import mutations from './mutations'
+import actions from './actions'
+import getters from './getters'
+export const key: InjectionKey<Store<State>> = Symbol()
 
 export const store = createStore<State>({
-  state() {
-    return {
-      count: 0,
-    };
-  },
-  mutations: {
-    increment(state) {
-      state.count++;
-    },
-  },
-});
+  state,
+  getters,
+  actions,
+  mutations
+})
+
+export function getStore() {
+  return {
+    store: useStore(key)
+  }
+}
