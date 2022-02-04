@@ -5,8 +5,10 @@
     "name": "Jon.Xia",
     "email": "xiajia@vip.qq.com"
   },
+  "license": "MIT",
   "scripts": {
-    "dev": "vite --mode developement --config ./config/index.js",
+    "dev": "vite --mode development --config ./config/index.js",
+    "serve": "vite --mode production --config ./config/index.js",
     "dev:e": "node ./server/app.js",
     "build": "vite build --mode production --config ./config/index.js",
     "preview": "vite preview"
@@ -14,6 +16,7 @@
   "dependencies": {
     "ant-design-vue": "^2.2.8",
     "axios": "^0.25.0",
+    "lodash": "^4.17.21",
     "vite-plugin-style-import": "^1.4.1",
     "vite-svg-loader": "^3.1.2",
     "vue": "^3.2.25",
